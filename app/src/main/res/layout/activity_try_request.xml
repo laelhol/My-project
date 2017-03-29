@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff413b"
+    tools:context="com.example.lael.holamundo.TryRequestActivity">
+
+    <RelativeLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/TVresponse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Response"
+            android:textSize="30sp"
+            android:layout_below="@+id/Bclear"
+            />
+
+        <Button
+            android:id="@+id/Brequest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Request string"
+            android:textSize="30sp"
+            android:layout_below="@+id/BRJsonOb" />
+
+        <TextView
+            android:id="@+id/TVdescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TVresponse"
+            android:layout_marginTop="24dp"
+            android:text="Description" />
+
+        <TextView
+            android:id="@+id/TVname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TVdescription"
+            android:layout_marginTop="21dp"
+            android:text="name" />
+
+        <TextView
+            android:id="@+id/TVaddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TVname"
+            android:layout_marginTop="23dp"
+            android:text="Address"
+            tools:text="address" />
+
+        <TextView
+            android:id="@+id/TVphone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TVaddress"
+            android:layout_marginTop="19dp"
+            android:text="Phone"
+            tools:text="phone" />
+
+        <TextView
+            android:id="@+id/TVfare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TVphone"
+            android:layout_marginTop="10dp"
+            android:text="fare"
+            tools:text="fare" />
+
+        <TextView
+            android:id="@+id/TVwebpage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="web page"
+            android:layout_below="@+id/TVfare" />
+
+        <TextView
+            android:id="@+id/TVfacebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:text="Facebook"
+            android:layout_below="@+id/TVwebpage" />
+
+        <TextView
+            android:id="@+id/TVopen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:text="open"
+            android:layout_below="@+id/TVfacebook" />
+
+        <TextView
+            android:id="@+id/TVclose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TVopen"
+            android:layout_marginTop="16dp"
+            android:text="close" />
+
+        <TextView
+            android:id="@+id/TVgymid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TVclose"
+            android:layout_marginTop="15dp"
+            android:text="Gym id"
+            tools:text="Gym id" />
+
+        <Button
+            android:id="@+id/BRJsonOb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Request object"
+            android:layout_below="@id/IVicon"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/Bclear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Limpiar"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/TVresponse" />
+
+        <ImageView
+            android:id="@+id/IVicon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/TVgymid"
+            android:layout_marginTop="16dp"/>
+
+    </RelativeLayout>
+</ScrollView>

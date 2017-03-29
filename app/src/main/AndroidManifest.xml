@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.lael.holamundo">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icono2"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".HolaMundo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".QueOnda"
+            android:label="@string/welcome"
+            android:parentActivityName=".HolaMundo">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HolaMundo" />
+        </activity>
+        <activity
+            android:name=".TryRequestActivity"
+            android:label="Try Request"
+            android:parentActivityName=".QueOnda">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".QueOnda" />
+        </activity>
+        <activity android:name=".GymListRequest"
+            android:label="List request"
+            android:parentActivityName=".QueOnda">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".QueOnda" />
+        </activity>
+
+
+    </application>
+
+</manifest>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Interfaz</string>
+    <string name="usuario">Usuario</string>
+    <string name="password">Password</string>
+    <string name="button_aceptar">Aceptar</string>
+    <string name="welcome">Que onda</string>
+    <string name="action_settings">Settings</string>
+</resources>
