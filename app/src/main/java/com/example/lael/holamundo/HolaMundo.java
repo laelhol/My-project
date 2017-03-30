@@ -34,8 +34,6 @@ public class HolaMundo extends AppCompatActivity {
     String url = "http://roho.fitness/user/login";
     String strusuario;
     String strpassword;
-    CookieManager mCookieManager;
-    CookieStore mCookieStore;
 
 
     @Override
