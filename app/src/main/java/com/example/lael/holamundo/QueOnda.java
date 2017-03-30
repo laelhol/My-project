@@ -21,7 +21,6 @@ import org.json.JSONObject;
 
 public class QueOnda extends AppCompatActivity {
     String url = "http://roho.fitness/user/getclientprofile";
-    String name,lastName;
     TextView TVUsername,TVpass;
 
     @Override
@@ -53,30 +52,6 @@ public class QueOnda extends AppCompatActivity {
         });
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
-
-
-   //    JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-   //        @Override
-   //        public void onResponse(JSONObject response) {
-   //            try {
-   //                JSONArray data = response.getJSONArray("data");
-   //                JSONObject info = data.getJSONObject(0);
-   //                TVUsername.setText(info.getString("name"));
-   //                TVpass.setText(info.getString("last_name"));
-
-   //            } catch (JSONException e) {
-   //                e.printStackTrace();
-   //            }
-
-   //        }
-   //    }, new Response.ErrorListener() {
-   //        @Override
-   //        public void onErrorResponse(VolleyError error) {
-
-   //        }
-   //    });
-   //    RequestQueue requestQueue = Volley.newRequestQueue(this);
-   //    requestQueue.add(jsonObjectRequest);
    }
 
     public void GymListRequest (View view){
