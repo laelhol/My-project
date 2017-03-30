@@ -21,14 +21,13 @@ import org.json.JSONObject;
 
 public class QueOnda extends AppCompatActivity {
     String url = "http://roho.fitness/user/getclientprofile";
-    TextView TVUsername,TVpass;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_que_onda);
-        TVUsername = (TextView) findViewById(R.id.TVUsername);
-        TVpass = (TextView) findViewById(R.id.TVpass);
+
         gatos();
     }
 
