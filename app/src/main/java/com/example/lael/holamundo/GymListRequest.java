@@ -18,9 +18,7 @@ public class GymListRequest extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gym_list_request);
-
         listView = (ListView)findViewById(R.id.activity_gym_list_request);
-
         adapter = new PostAdapter(this);
         listView.setAdapter(adapter);
     }
