@@ -1,5 +1,7 @@
 package com.example.lael.holamundo;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -7,7 +9,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 
-public interface ApiInterface {
+interface ApiInterface {
     @FormUrlEncoded
     @POST("/user/login")
     Call<Responses<Integer>> login(
@@ -17,5 +19,8 @@ public interface ApiInterface {
 
     @GET("/user/getclientprofile")
     Call <Responses<UserData>> info();
+
+    @GET("/getGyms/1/28")
+    Call <Responses<List<GymPostRetrofit>>> allGyms();
 
 }

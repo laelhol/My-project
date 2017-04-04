@@ -39,6 +39,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".QueOnda" />
         </activity>
+        <activity android:name=".GymListRetrofit"
+            android:parentActivityName=".QueOnda">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".QueOnda" />
+
+        </activity>
 
 
     </application>
