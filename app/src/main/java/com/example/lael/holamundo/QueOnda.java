@@ -1,10 +1,12 @@
 package com.example.lael.holamundo;
 
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -13,6 +15,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.squareup.picasso.Picasso;
 
 import java.util.Arrays;
 
@@ -21,6 +24,8 @@ import retrofit2.Callback;
 
 public class QueOnda extends AppCompatActivity {
     String url = "http://roho.fitness/user/getclientprofile";
+    String prueba = "http://roho.fitness/gym-logos/687/2016-02-22_17:53:19.png";
+    ImageView Prueba;
     ApiInterface apiService;
 
 
@@ -29,6 +34,7 @@ public class QueOnda extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_que_onda);
         apiService = ApiClient.getClient(getApplicationContext()).create(ApiInterface.class);
+        Prueba = (ImageView)findViewById(R.id.Prueba);
         userInfo();
     }
 
@@ -62,6 +68,7 @@ public class QueOnda extends AppCompatActivity {
     }
 
     public void userInfo(){
+        //Picasso.with(this).load(prueba).into(Prueba);
         Call <Responses<UserData>> call = apiService.info();
         call.enqueue(new Callback<Responses<UserData>>() {
             @Override
@@ -85,6 +92,5 @@ public class QueOnda extends AppCompatActivity {
 
             }
         });
-
     }
 }
