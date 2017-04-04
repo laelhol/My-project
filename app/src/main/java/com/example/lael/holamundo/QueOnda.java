@@ -55,8 +55,10 @@ public class QueOnda extends AppCompatActivity {
    }
 
     public void GymListRequest (View view){
-        Intent intent = new Intent(this, GymListRequest.class);
-        startActivity(intent);
+      //  Intent intent = new Intent(this, GymListRequest.class);
+      //  startActivity(intent);
+
+        startActivity(new Intent(QueOnda.this,GymListRetrofit.class));
     }
 
     public void userInfo(){
