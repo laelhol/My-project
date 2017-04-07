@@ -48,4 +48,14 @@
         android:id="@+id/Prueba"
         android:layout_alignBottom="@id/textView"/>
 
+    <Button
+        android:id="@+id/BprofileInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Informacion de perfil"
+        android:layout_above="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:onClick="ProfileInfo"
+       />
+
 </RelativeLayout>

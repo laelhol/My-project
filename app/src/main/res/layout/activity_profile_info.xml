@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#dedcdc"
+    tools:context="com.example.lael.holamundo.ProfileInfo"
+    android:weightSum="3">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/Toolbar"
+        android:background="@color/colorPrimaryDark"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/wmenu"
+            android:onClick="menuicon"/>
+
+        <TextView
+            android:id="@+id/TVperfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:textSize="20dp"
+            android:text="Perfil"
+            android:gravity="center"
+            android:textColor="@android:color/white"/>
+    </android.support.v7.widget.Toolbar>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Toolbar"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/profil_bck"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:id="@+id/Bwedit"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="7dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/wedit"
+                    android:onClick="wedit"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true" />
+
+                <TextView
+                    android:id="@+id/TVid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="ID:"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold" />
+
+             //
+             //      android:id="@+id/IVprofile"
+             //      android:layout_width="120dp"
+             //      android:layout_height="120dp"
+             //      android:layout_below="@+id/TVid"
+             //      android:background="@drawable/circle"
+             //      android:layout_centerHorizontal="true" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:id="@+id/IVprofile"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/TVid"
+                    android:layout_centerHorizontal="true"
+                    app:civ_border_color="@android:color/white"
+                    app:civ_border_width="3dp"/>
+
+                <TextView
+                    android:id="@+id/TVname3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/IVprofile"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:text="Name:"
+                    android:textColor="#ffffff"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:id="@+id/INFO"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:id="@+id/Bedit"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="7dp"
+                    android:background="@drawable/edit"
+                    android:onClick="edit"
+                    />
+
+                <TextView
+                    android:id="@+id/TVNEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Correo"
+                    android:textColor="@android:color/black"
+                    android:paddingStart="30dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textStyle="bold"
+                    android:editable="false"
+                    android:layout_marginTop="3dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:id="@+id/TVemail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/TVNEmail"
+                    android:textColor="@android:color/black"
+                    android:paddingStart="30dp"
+                    android:hint="Mail"
+                    android:textColorHint="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/TVNEheight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingStart="30dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:layout_below="@+id/TVemail"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:text="Altura"
+                    android:editable="false"/>
+
+                <TextView
+                    android:id="@+id/TVheight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/TVNEheight"
+                    android:textColor="@android:color/black"
+                    android:paddingStart="30dp"
+                    android:hint="Altura"
+                    android:textColorHint="@android:color/black"/>
+
+                <TextView
+                    android:id="@+id/TVNEbirthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/TVheight"
+                    android:textColor="@android:color/black"
+                    android:paddingStart="30dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="Fecha de nacimiento"
+                    android:textStyle="bold"
+                    android:editable="false"/>
+
+                <TextView
+                    android:id="@+id/TVbirthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/TVNEbirthday"
+                    android:textColor="@android:color/black"
+                    android:paddingStart="30dp"
+                    android:hint="Cumpleaños"
+                    android:textColorHint="@android:color/black"
+                    android:layout_marginBottom="15dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/TVNEconfig"
+                    android:layout_width="match_parent"
+                    android:background="@android:color/white"
+                    android:layout_height="45dp"
+                    android:textColor="#dedcdc"
+                    android:text="Configuracíon"
+                    android:paddingStart="20dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="8dp"
+                    android:editable="false"
+                    android:textStyle="bold"/>
+
+                <Button
+                    android:id="@+id/BchangePass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/TVNEconfig"
+                    android:text="Cambiar contraseña"
+                    android:textAllCaps="false"
+                    android:textAlignment="textStart"
+                    android:textSize="14sp"
+                    android:layout_marginTop="1dp"
+                    android:background="@drawable/ripple"
+                    android:textColor="@android:color/black"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingStart="30dp"
+                    android:onClick="ChangePass"
+                    style="?android:attr/borderlessButtonStyle"/>
+
+                <TextView
+                    android:id="@+id/TVNEhistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/BchangePass"
+                    android:background="@android:color/white"
+                    android:layout_marginTop="6dp"
+                    android:paddingStart="20dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="8dp"
+                    android:text="Historial"
+                    android:textColor="#dedcdc"
+                    android:textStyle="bold"
+                    android:editable="false"/>
+
+                <Button
+                    android:id="@+id/Bpayments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/TVNEhistory"
+                    android:background="@drawable/ripple"
+                    android:textAllCaps="false"
+                    android:textAlignment="textStart"
+                    android:layout_marginTop="1dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:paddingStart="30dp"
+                    android:text="Pagos"
+                    android:textColor="@android:color/black"
+                    android:onClick="Payments"
+                    style="?android:attr/borderlessButtonStyle"/>
+
+                <Button
+                    android:id="@+id/Bcharges"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/Bpayments"
+                    android:background="@drawable/ripple"
+                    android:layout_marginTop="1dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:paddingStart="30dp"
+                    android:text="Recargos"
+                    android:textAllCaps="false"
+                    android:textAlignment="textStart"
+                    android:textColor="@android:color/black"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:onClick="Charges"/>
+
+                <Button
+                    android:id="@+id/Bsuscriptions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/Bcharges"
+                    android:background="@drawable/ripple"
+                    android:layout_marginTop="1dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:paddingStart="30dp"
+                    android:text="Suscripciones"
+                    android:textAllCaps="false"
+                    android:textAlignment="textStart"
+                    android:textColor="@android:color/black"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:onClick="Suscriptions"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

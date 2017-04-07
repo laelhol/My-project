@@ -35,12 +35,16 @@ public class QueOnda extends AppCompatActivity {
         setContentView(R.layout.activity_que_onda);
         apiService = ApiClient.getClient(getApplicationContext()).create(ApiInterface.class);
         Prueba = (ImageView)findViewById(R.id.Prueba);
-        userInfo();
+        //userInfo();
     }
 
     public void TryRequestActivity (View view){
         Intent intent = new Intent(this, TryRequestActivity.class);
         startActivity(intent);
+    }
+
+    public void ProfileInfo (View view){
+        startActivity(new Intent(QueOnda.this,ProfileInfo.class));
     }
 
     public void gatos()
