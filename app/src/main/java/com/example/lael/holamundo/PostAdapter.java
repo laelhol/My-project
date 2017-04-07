@@ -58,6 +58,8 @@ public class PostAdapter extends ArrayAdapter{
             }
         });
         requestQueue.add(jsArrayRequest);
+
+
     }
 
     @Override
@@ -69,7 +71,7 @@ public class PostAdapter extends ArrayAdapter{
     public View getView(int position, View convertView, ViewGroup parent){
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
 
-        //referencia del view procesado
+        // referencia del view procesado
         View listItemView;
 
         //comprobar si el view no existe

@@ -27,6 +27,10 @@ import java.net.CookieManager;
 import java.util.HashMap;
 import java.util.Map;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+import retrofit2.Call;
+import retrofit2.Callback;
+
 public class HolaMundo extends AppCompatActivity {
     EditText etusername;
     EditText etpassword;
@@ -34,7 +38,7 @@ public class HolaMundo extends AppCompatActivity {
     String url = "http://roho.fitness/user/login";
     String strusuario;
     String strpassword;
-
+    ApiInterface apiService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,19 +47,19 @@ public class HolaMundo extends AppCompatActivity {
         etusername = (EditText) findViewById(R.id.ETUsuario);
         etpassword = (EditText) findViewById(R.id.ETPassword);
         baceptar = (Button) findViewById(R.id.BAceptar);
-       CookieManager mCookieManager = new CookieManager();
-       mCookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ORIGINAL_SERVER);
-       CookieHandler.setDefault(mCookieManager);
+        CookieManager mCookieManager = new CookieManager();
+        mCookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ORIGINAL_SERVER);
+        CookieHandler.setDefault(mCookieManager);
+        apiService = ApiClient.getClient(getApplicationContext()).create(ApiInterface.class);
     }
 
     public void QueOnda(View view) {
         strusuario = etusername.getText().toString();
         strpassword = etpassword.getText().toString();
-        userLogin();
+        loginRetrofit();
     }
 
     private void userLogin() {
-
         java.net.CookieManager CookieManager = new java.net.CookieManager();
         CookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
         CookieHandler.setDefault(CookieManager);
@@ -97,5 +101,34 @@ public class HolaMundo extends AppCompatActivity {
         RequestQueue requestQueue1 = Volley.newRequestQueue(this);
       requestQueue1.add(stringRequest);
         Log.d("gatito",""+CookieManager.getCookieStore().getCookies());
+    }
+
+    private void loginRetrofit()
+    {
+        Call<Responses<Integer>> call = apiService.login(strusuario,strpassword);
+        call.enqueue(new Callback<Responses<Integer>>() {
+            @Override
+            public void onResponse(Call<Responses<Integer>> call, retrofit2.Response<Responses<Integer>> response) {
+                if (!response.body().getError()){
+                    startActivity(new Intent(HolaMundo.this,QueOnda.class));
+                }else{
+                    Toast.makeText(getBaseContext(), "Error 2"+" "+response.body().getMessage(), Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Responses<Integer>> call, Throwable t) {
+                error();
+            }
+        });
+    }
+
+    public void error ()
+    {
+        SweetAlertDialog pDialog = new SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE);
+        pDialog
+               .setTitleText("No se arma")
+               .setContentText("Checa bien la info morr@")
+               .show();
     }
 }

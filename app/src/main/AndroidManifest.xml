@@ -6,13 +6,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/icono2"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".HolaMundo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -32,15 +32,31 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".QueOnda" />
         </activity>
-        <activity android:name=".GymListRequest"
+        <activity
+            android:name=".GymListRequest"
             android:label="List request"
             android:parentActivityName=".QueOnda">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".QueOnda" />
         </activity>
+        <activity
+            android:name=".GymListRetrofit"
+            android:parentActivityName=".QueOnda">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".QueOnda" />
+        </activity>
+        <activity
+            android:name=".ProfileInfo"
+            android:parentActivityName=".QueOnda">
 
 
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".QueOnda" />
+
+        </activity>
     </application>
 
 </manifest>
