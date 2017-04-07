@@ -27,6 +27,7 @@ import java.net.CookieManager;
 import java.util.HashMap;
 import java.util.Map;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
 
@@ -38,7 +39,6 @@ public class HolaMundo extends AppCompatActivity {
     String strusuario;
     String strpassword;
     ApiInterface apiService;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +60,6 @@ public class HolaMundo extends AppCompatActivity {
     }
 
     private void userLogin() {
-
         java.net.CookieManager CookieManager = new java.net.CookieManager();
         CookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
         CookieHandler.setDefault(CookieManager);
@@ -104,8 +103,6 @@ public class HolaMundo extends AppCompatActivity {
         Log.d("gatito",""+CookieManager.getCookieStore().getCookies());
     }
 
-
-
     private void loginRetrofit()
     {
         Call<Responses<Integer>> call = apiService.login(strusuario,strpassword);
@@ -121,9 +118,17 @@ public class HolaMundo extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Responses<Integer>> call, Throwable t) {
-
+                error();
             }
         });
     }
 
+    public void error ()
+    {
+        SweetAlertDialog pDialog = new SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE);
+        pDialog
+               .setTitleText("No se arma")
+               .setContentText("Checa bien la info morr@")
+               .show();
+    }
 }

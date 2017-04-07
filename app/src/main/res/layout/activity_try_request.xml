@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ff413b"
+    android:background="@drawable/vacio"
     tools:context="com.example.lael.holamundo.TryRequestActivity">
 
     <RelativeLayout
