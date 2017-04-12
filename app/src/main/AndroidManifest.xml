@@ -50,12 +50,17 @@
         <activity
             android:name=".ProfileInfo"
             android:parentActivityName=".QueOnda">
-
-
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".QueOnda" />
-
+        </activity>
+        <activity
+            android:name=".ChangePassword"
+            android:parentActivityName=".ProfileInfo"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ProfileInfo"/>
         </activity>
     </application>
 

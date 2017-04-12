@@ -110,7 +110,10 @@ public class HolaMundo extends AppCompatActivity {
             @Override
             public void onResponse(Call<Responses<Integer>> call, retrofit2.Response<Responses<Integer>> response) {
                 if (!response.body().getError()){
-                    startActivity(new Intent(HolaMundo.this,QueOnda.class));
+                    Intent intent = new Intent(getBaseContext(), QueOnda.class);
+                    intent.putExtra("password",strpassword);
+                    startActivity(intent);
+                    //startActivity(new Intent(HolaMundo.this,QueOnda.class));
                 }else{
                     Toast.makeText(getBaseContext(), "Error 2"+" "+response.body().getMessage(), Toast.LENGTH_LONG).show();
                 }
