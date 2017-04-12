@@ -1,5 +1,6 @@
 package com.example.lael.holamundo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,8 @@ public class ProfileInfo extends AppCompatActivity {
     TextView height;
     TextView birthday;
     ImageView picture;
+    String nameString;
+    String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +35,16 @@ public class ProfileInfo extends AppCompatActivity {
         birthday = (TextView)findViewById(R.id.TVbirthday);
         picture = (ImageView)findViewById(R.id.IVprofile);
         picture.setImageResource(R.drawable.tmnt);
+        password = getIntent().getStringExtra("password");
         UserInfo();
     }
 
     public void ChangePass(View view){
-        Toast.makeText(getBaseContext(), "Cambiar contraseña", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, ChangePassword.class);
+        intent.putExtra("nameString",nameString);
+        intent.putExtra("password",password);
+        startActivity(intent);
+        //startActivity(new Intent(ProfileInfo.this,ChangePassword.class));
     }
 
     public void Payments(View view){
@@ -70,7 +78,8 @@ public class ProfileInfo extends AppCompatActivity {
             public void onResponse(Call<Responses<UserData>> call, Response<Responses<UserData>> response) {
                 if (!response.body().getError()) {
                     ID.setText("ID: "+response.body().getData().getUser_id());
-                    name.setText(response.body().getData().getName()+" "+response.body().getData().getLast_name());
+                    nameString = response.body().getData().getName()+" "+response.body().getData().getLast_name();
+                    name.setText(nameString);
                     mail.setText(response.body().getData().getEmail());
                     height.setText(response.body().getData().getHeight()+" cm");
                     birthday.setText(response.body().getData().getBirthday());

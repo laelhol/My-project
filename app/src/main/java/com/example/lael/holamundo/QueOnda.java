@@ -27,6 +27,7 @@ public class QueOnda extends AppCompatActivity {
     String prueba = "http://roho.fitness/gym-logos/687/2016-02-22_17:53:19.png";
     ImageView Prueba;
     ApiInterface apiService;
+    String password;
 
 
     @Override
@@ -35,6 +36,7 @@ public class QueOnda extends AppCompatActivity {
         setContentView(R.layout.activity_que_onda);
         apiService = ApiClient.getClient(getApplicationContext()).create(ApiInterface.class);
         Prueba = (ImageView)findViewById(R.id.Prueba);
+        password = getIntent().getStringExtra("password");
         //userInfo();
     }
 
@@ -44,7 +46,10 @@ public class QueOnda extends AppCompatActivity {
     }
 
     public void ProfileInfo (View view){
-        startActivity(new Intent(QueOnda.this,ProfileInfo.class));
+        Intent intent = new Intent(this,ProfileInfo.class);
+        //startActivity(new Intent(QueOnda.this,ProfileInfo.class));
+        intent.putExtra("password",password);
+        startActivity(intent);
     }
 
     public void gatos()
